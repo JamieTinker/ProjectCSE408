@@ -33,7 +33,7 @@ def spoof():
     ambienttemp = random.randint(75, 77)
     
     #spoof data from bpm180
-    bmptemp = random.randint(76, 78)
+    bpmtemp = random.randint(76, 78)
     
     
     #estimate core body temp
@@ -51,12 +51,14 @@ def spoof():
     temp4_list.append(bpmtemp)
     temp5_list.append(estcoretemp)
     
-    sense_data.append(masktemp)
+    sense_data.append(rawmasktemp)
     sense_data.append(armpittemp)
     sense_data.append(ambienttemp)
     sense_data.append(bpmtemp)
     sense_data.append(estcoretemp)
     sense_data.append(dt)
+    
+    time.sleep(3)
     
     return sense_data
 
@@ -65,7 +67,7 @@ def spoof():
 #animate has its own internal loop. Adding additional
 #loops will break the program
 def animate(i):
-    data = get_sense_data()
+    data = spoof()
     LogData()
     ax1.clear()
     ax1.plot(x, temp1_list)
@@ -78,7 +80,7 @@ def animate(i):
 
 #log data to data.csv
 def LogData():
-    data = get_sense_data()
+    data = spoof()
     with open('data.csv', 'a', newline = '') as f:
         data_writer = writer(f)
         data_writer.writerow(data)
