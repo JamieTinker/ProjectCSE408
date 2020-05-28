@@ -93,4 +93,3 @@ with open('data.csv', 'w', newline = '') as f:
 #run animation
 ani = animation.FuncAnimation(fig, animate, interval=100)
 plt.show()
-S
