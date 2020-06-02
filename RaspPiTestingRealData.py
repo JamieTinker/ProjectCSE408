@@ -10,6 +10,7 @@ from csv import writer
 from datetime import datetime
 from PIL import Image, ImageTk
 from tkinter import filedialog
+import Adafruit_BMP.BMP085 as BMP085
 
 
 sensori2c = BMP085.BMP085()
@@ -110,11 +111,11 @@ def get_sense_data():
     return sense_data
 
 #initialize the lists 
-datainit = spoof()
+datainit = get_sense_data()
 
 #Used to update and draw live graph + update data labels
 def animate(i):
-    data = spoof()
+    data = get_sense_data()
     LogData()
     ax1.clear()
     ax1.plot(x, temp1_list)
@@ -230,14 +231,14 @@ tab_parent.add(tab4, text="Temp")
 
 
 # === WIDGETS FOR TAB TWO
-data1LabelTabTwo = tk.Label(tab2, text="Core Body Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 30, height = 3)
-coreBodyTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 15, height = 3)
-data2LabelTabTwo = tk.Label(tab2, text="Ambient Air Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 30, height = 3)
-ambientTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 15, height = 3)
-data3LabelTabTwo = tk.Label(tab2, text="Mask Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 30, height = 3)
-maskTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 15, height = 3)
-data4LabelTabTwo = tk.Label(tab2, text="Auxilla Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 30, height = 3)
-axillaTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 15, height = 3)
+data1LabelTabTwo = tk.Label(tab2, text="Core Body Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
+coreBodyTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
+data2LabelTabTwo = tk.Label(tab2, text="Ambient Air Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
+ambientTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
+data3LabelTabTwo = tk.Label(tab2, text="Mask Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
+maskTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
+data4LabelTabTwo = tk.Label(tab2, text="Auxilla Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
+axillaTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
 #imgLabelTabOne = tk.Label(tab1)
 
 buttonForward = tk.Button(tab1, text="Forward")
