@@ -22,6 +22,45 @@ fig = plt.figure(num='Non-Invasive Core Body Temperature', figsize=[13, 3])
 ax1 = fig.add_subplot(1, 1, 1)
 
 
+'''
+def spoofRawMaskTemp():
+    #spoof mask sensor temp
+    rawmasktemp = random.randint(88, 92)
+    
+    temp1_list.append(rawmasktemp)
+    
+
+
+
+def spoofArmpitTemp():
+    #spoof armpit sensor temp
+    armpittemp = random.randint(96, 98)
+    
+    temp2_list.append(armpittemp)
+    
+
+
+
+def spoofAmbientTemp():
+    #spoof armpit sensor temp
+    ambienttemp = random.randint(76, 77)
+    
+    temp3_list.append(ambienttemp)
+    
+    return temp3_list
+
+
+def spoofBpmTemp():
+    #spoof BPM ambient sensor temp
+    armpittemp = random.randint(96, 98)
+    
+    temp2_list.append(armpittemp)
+    
+    return temp2_list
+'''
+
+
+
 def spoof():
     
     sense_data = []
@@ -61,25 +100,29 @@ def spoof():
     sense_data.append(estcoretemp)
     sense_data.append(dt)
     
-    time.sleep(1)
+    time.sleep(.25)
     
     return sense_data
 
 
-#animate function for matplotlib to update graph
-#animate has its own internal loop. Adding additional
-#loops will break the program
-def animate(i):
+def animate1(i):
     data = spoof()
     LogData()
     ax1.clear()
     ax1.plot(x, temp1_list)
-    ax1.plot(x, temp2_list)
-    ax1.plot(x, temp3_list)
-    ax1.plot(x, temp4_list)
-    ax1.plot(x, temp5_list)
-    ax1.legend(['Breath Temp', 'Axilla Temp', 'Ambient Temp 1', 'Ambient Temp 2', 'Estimated Core Body Temp'])
+    ax1.legend(['data 1'])
     print(data)
+
+
+def animate2(i):
+    data = spoof()
+    LogData()
+    ax1.clear()
+    ax1.plot(x, temp2_list)
+    ax1.legend(['data 1'])
+    print(data)
+
+
 
 #log data to data.csv
 def LogData():
@@ -93,12 +136,44 @@ with open('data.csv', 'w', newline = '') as f:
     data_writer = writer(f)
     data_writer.writerow(['Breath Temp', 'Axilla Temp', 'Ambient Temp 1', 'Ambient Temp 2', 'Estimated Core Body Temp'])
 
+
+
+
 #run animation
-#ani = animation.FuncAnimation(fig, animate, interval=100)
-#plt.show()
+    
+choice = 0
 
 
 
+
+gui = tk.Tk() #init
+gui.title("Testing...") #title of window
+gui.geometry("1200x600") #size of window
+
+tab_parent = ttk.Notebook(gui)
+
+#init frames for tabs 1 and 2
+tab1 = ttk.Frame(tab_parent)
+tab2 = ttk.Frame(tab_parent)
+
+
+buttonForward = tk.Button(tab1, text="Forward")
+buttonBack = tk.Button(tab1, text="Back")
+
+buttonForward.grid(row=1, column=1, padx=15, pady=15)
+buttonBack.grid(row=2, column=1, padx=15, pady=15)
+
+#------------GRAPH------------
+tab_parent.pack(expand=1, fill="both")
+
+ani1 = animation.FuncAnimation(fig, animate1, interval=100)
+
+
+
+
+gui.mainloop()
+
+'''
 #-----------------------------GUI------------------------
 
 gui = tk.Tk() #init
@@ -111,11 +186,13 @@ tab_parent = ttk.Notebook(gui)
 tab1 = ttk.Frame(tab_parent)
 tab2 = ttk.Frame(tab_parent)
 tab3 = ttk.Frame(tab_parent)
+tab4 = ttk.Frame(tab_parent)
 
 #add frames to parent with titles
 tab_parent.add(tab1, text="Data")
 tab_parent.add(tab2, text="More")
 tab_parent.add(tab3, text="Graph")
+tab_parent.add(tab4, text="Graph2")
 
 
 # === WIDGETS FOR TAB ONE
@@ -171,16 +248,22 @@ buttonCommit.grid(row=4, column=1, padx=15, pady=15)
 buttonAddImage.grid(row=4, column=2, padx=15, pady=15)
 
 
-# === WIDGETS FOR TAB 3
-canvas = FigureCanvasTkAgg(fig, master=tab3)
 
+#------------GRAPH------------
+# === WIDGETS FOR TAB 3 and 4
+canvas1 = FigureCanvasTkAgg(fig, master=tab3)
 
-# === ADD WIDGETS TO TAB 3
-canvas.get_tk_widget().grid(row=1, column=1, padx=15, pady=15)
+canvas2 = FigureCanvasTkAgg(fig, master=tab4)
+
+# === ADD WIDGETS TO TAB 3 and 4
+canvas1.get_tk_widget().grid(row=1, column=1, padx=15, pady=15)
+
+canvas2.get_tk_widget().grid(row=1, column=1, padx=15, pady=15)
 
 
 tab_parent.pack(expand=1, fill="both")
 
-ani = animation.FuncAnimation(fig, animate, interval=100)
+ani = animation.FuncAnimation(fig, animateBody, interval=100)
 
 gui.mainloop()
+'''

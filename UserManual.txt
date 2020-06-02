@@ -1,0 +1,59 @@
+Joseph Premdas
+Justin Waterman
+Jamie Tinker
+Abdul Aziz Alholaibi
+Aracely Arevalo
+
+
+		USER MANUAL - Non-Invasive Core Body Thermometer 
+
+
+Product overview:
+
+	The body thermometer will accurately monitor and display the internal 
+	body temperature of the patient through the non-invasive procedure by 
+	placing a temperature sensing unit both underneath the armpit and over 
+	the patient's nose and mouth. We will be monitoring the temperature of 
+	the exhaled breath of the patient, while monitoring the temperature of 
+	the O2 tank, and the environment. We will have a minimum of 3 thermistors 
+	in this tool.
+
+
+Package Contents 
+
+	The following items are included in the package: 
+		(1) axillary body temperature patch 
+		(1) handheld battery control 
+		(3) sensory connectors 
+		(1) traveling case 
+		(1) USB-C Charger 
+		Batteries not included. 
+       
+Initial Setup
+
+	Before using the device first power on the handheld control (1) plug in 
+	and charge the device with the charger that has been included in the box 
+	or (2) Insert batteries into the back of the handheld control. The device 
+	will have a short period where the thermistors must adjust to the feedback 
+	from the environment, O2 tank, and the patients exhaled breath. Once the 
+	thermistors have flatlined, the equations and calculations can now take place.
+
+
+Operation 
+
+	1. Turn on the handheld control by pressing down on the power button
+	2. Plug in the both sensor units into the handheld device 
+	3. With all sensor units connected to the handheld device, attach sensors onto 
+	the axillary pad which will be passed underneath the armpit, mouthpiece and 
+	environment (specific location TBA)
+
+
+Maintenance 
+
+	To disinfect the axillary pad and cords simply wipe down with alcohol wipes. 
+	To keep the product charged at all times.
+	To repair or replace any parts of the device, please call and contact the 
+	manufacturers guarantee customer service hotline.
+	To replace any worn out wires and resistors, there should be a customer service 
+	for such events.
+
