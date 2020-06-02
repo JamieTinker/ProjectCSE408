@@ -129,7 +129,7 @@ def animate(i):
 
 #auto log data to data.csv
 def LogData():
-    data = spoof()
+    data = get_sense_data()
     with open('data.csv', 'a', newline = '') as f:
         data_writer = writer(f)
         data_writer.writerow(data)
@@ -167,7 +167,7 @@ def openUserManual():
     with open("UserManual.txt", "r") as f:
         manualTextbox.insert(tk.INSERT, f.read())
 
-    manualTextbox.config(font=("TkDefaultFont", 20))
+    manualTextbox.config(font=("TkDefaultFont", 11))
     
     manualTextbox.grid(row=0, column=0, pady=15)
     yscrollbar.config(command=manualTextbox.yview)
@@ -196,7 +196,7 @@ def openAboutUs():
     with open("aboutUs.txt", "r") as f:
         aboutUs.insert(tk.INSERT, f.read())
 
-    aboutUs.config(font=("TkDefaultFont", 20))
+    aboutUs.config(font=("TkDefaultFont", 11))
     
     aboutUs.grid(row=0, column=0, pady=15)
     yscrollbar.config(command=aboutUs.yview)
@@ -231,14 +231,14 @@ tab_parent.add(tab4, text="Temp")
 
 
 # === WIDGETS FOR TAB TWO
-data1LabelTabTwo = tk.Label(tab2, text="Core Body Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
-coreBodyTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
-data2LabelTabTwo = tk.Label(tab2, text="Ambient Air Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
-ambientTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
-data3LabelTabTwo = tk.Label(tab2, text="Mask Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
-maskTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
-data4LabelTabTwo = tk.Label(tab2, text="Auxilla Temperature: ", bg="Grey", font=("TkDefaultFont", 30), width = 15, height = 1)
-axillaTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 30), width = 6, height = 1)
+data1LabelTabTwo = tk.Label(tab2, text="Core Body Temperature: ", bg="Grey", font=("TkDefaultFont", 20), width = 25, height = 1)
+coreBodyTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 20), width = 10, height = 1)
+data2LabelTabTwo = tk.Label(tab2, text="Ambient Air Temperature: ", bg="Grey", font=("TkDefaultFont", 20), width = 25, height = 1)
+ambientTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 20), width = 10, height = 1)
+data3LabelTabTwo = tk.Label(tab2, text="Mask Temperature: ", bg="Grey", font=("TkDefaultFont", 20), width = 25, height = 1)
+maskTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 20), width = 10, height = 1)
+data4LabelTabTwo = tk.Label(tab2, text="Auxilla Temperature: ", bg="Grey", font=("TkDefaultFont", 20), width = 25, height = 1)
+axillaTempLabel = tk.Label(tab2, bg="white", relief="sunken", font=("TkDefaultFont", 20), width = 10, height = 1)
 #imgLabelTabOne = tk.Label(tab1)
 
 buttonForward = tk.Button(tab1, text="Forward")
@@ -259,24 +259,25 @@ axillaTempLabel.grid(row=3, column=2)
 
 
 # === WIDGETS FOR TAB THREE
-buttonInstructions = tk.Button(tab3, text="Instructions", font=("TkDefaultFont", 30), width = 10, height = 3)
-buttonUsermanual = tk.Button(tab3, text="User Manual", font=("TkDefaultFont", 30), width = 10, height = 3, command=openUserManual)
-buttonAboutus = tk.Button(tab3, text="About Us", font=("TkDefaultFont", 30), width = 10, height = 3, command=openAboutUs)
-classNameLabel = tk.Label(tab3, text="California State University San Bernardino \n CSE 408 - Spring 2020", font=("TkDefaultFont", 30), width = 45, height = 4, bg="White")
-groupNameLabel = tk.Label(tab3, text="Team: The High And Mighty", font=("TkDefaultFont", 30), width = 30, height = 4, bg="White")
+buttonInstructions = tk.Button(tab3, text="Instructions", font=("TkDefaultFont", 16), width = 14, height = 1)
+buttonUsermanual = tk.Button(tab3, text="User Manual", font=("TkDefaultFont", 16), width = 14, height = 1, command=openUserManual)
+buttonAboutus = tk.Button(tab3, text="About Us", font=("TkDefaultFont", 16), width = 14, height = 1, command=openAboutUs)
+classNameLabel = tk.Label(tab3, text="California State University San Bernardino \n CSE 408 - Spring 2020", font=("TkDefaultFont", 14), width = 45, height = 2, bg="White")
+groupNameLabel = tk.Label(tab3, text="Team: The High And Mighty", font=("TkDefaultFont", 14), width = 45, height = 1, bg="White")
 
 logoImage = Image.open("CSUSBLogo.gif")
+logoImage = logoImage.resize((500, 200), Image.ANTIALIAS)
 photoTK = ImageTk.PhotoImage(logoImage, master=tab3)
 logoLabel = tk.Label(tab3, image=photoTK)
 logoLabel.image = photoTK
 
 # === ADD WIDGETS TO GRID ON TAB THREE
-buttonInstructions.grid(row=0, column=0, padx=15, pady=15)
-buttonUsermanual.grid(row=1, column=0, padx=15, pady=15)
-buttonAboutus.grid(row=2, column=0, padx=15, pady=15)
-classNameLabel.grid(row=0, column=2, padx=15, pady=15)
-groupNameLabel.grid(row=1, column=2, padx = 15, pady=15)
-logoLabel.grid(row=2, column=2, padx = 15, pady=15)
+buttonInstructions.grid(row=0, column=0, padx=5, pady=5)
+buttonUsermanual.grid(row=0, column=1, padx=5, pady=5)
+buttonAboutus.grid(row=0, column=2, padx=5, pady=5)
+classNameLabel.grid(row=1, columnspan=3, padx=5, pady=5)
+groupNameLabel.grid(row=2, columnspan=3, padx = 5, pady=5)
+logoLabel.grid(rowspan=2, columnspan=3, padx = 5, pady=5)
 
 #------------GRAPH------------
 # === WIDGETS FOR TAB 1
