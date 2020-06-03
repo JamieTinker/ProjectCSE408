@@ -1,9 +1,40 @@
-fddafsdfasdfasdfa
+Joseph Premdas
+Justin Waterman
+Jamie Tinker
+Abdul Aziz Alholaibi
+Aracely Arevalo
 
-das
-f
-s
-df
+June 3, 2020
 
-asd
-f
+				About Us 
+
+	We are a group of students attending California State University San 
+Bernardino. We are computer engineering majors and this prototype is the result 
+of a year long senior project. We were given the task of creating a non-invasive 
+core body temperature tool which could serve as a more practical solution to 
+invasive methods which are often difficult to use in the field and have 
+certain limitations. Current methods of invasively measureing core body temperature 
+include the use of rectal thermometers, esophegeal theremometers, or ingestable
+thermometers. In the case of an emergency situation in the field, the only 
+reasonable invasive method is the rectal thermometer, as digestable thermometers
+must be swallowed before a person is showing signs of heat related stress, and 
+esophegeal thermometers cannot be used on people who are incapacitated or 
+suffering from heat related stress. Rectal thermometers have their own challenges 
+also: An example of this is the emergency use of rectal thermometer on a young 
+athlete who exhibit signs of heat stroke during training or sport. It would be 
+innopropriate for a physian to use such a practice, and often times people 
+suffer because of this. 
+	Our goal is to solve this problem and prevent heat related injury or 
+death of athletes by obtaining a core body temperature measurement non-invasively.
+This prototype is not yet capable of meeting that objective, as more extensive 
+testing and tweaking of our algorithm is nessicary, to ensure that this device 
+can be trusted in a wide variety of invironmental conditions. We are nearing the 
+end of our Senior year and due to the COVID-19 pandemic of 2020, we are unable 
+to physically meet and perform the nessicary tests and adjustments. If you are 
+reading this, we thank you for your interest in our prototype and we hope that, 
+while we didn't meet our goals, we have had some contribution to this decade old 
+problem.
+
+
+
+

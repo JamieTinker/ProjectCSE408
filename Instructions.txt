@@ -1,0 +1,28 @@
+Joseph Premdas
+Justin Waterman
+Jamie Tinker
+Abdul Aziz Alholaibi
+Aracely Arevalo
+
+
+		Instructions - Non-Invasive Core Body Temperature Tool
+
+1. Place the axilla thermometer as far as possible in the crook of the patients 
+arm pit area. 
+
+2. Place the mask on the patient using strap, and ensure that there is a tight fit. 
+
+3. Turn on the device and make sure that the BMP180 temperature module is not in 
+contact with anything to ensure accurate environmental data. 
+
+4. Monitor the live graph and wait for the mask temperature and axilla temperature
+to stabilize. 
+
+5. Go to the data tab and observe the estimated core body temperature measurement. 
+The measurement should be quite stable at this point. Temperature sensors must be 
+in place for about 1-2 minutes to obtain a stabilized result. 
+
+6. Take appropriate measures to care for the patient depending on the estimated 
+core body temperature reading. 
+
+

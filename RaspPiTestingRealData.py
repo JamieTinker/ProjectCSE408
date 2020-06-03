@@ -174,8 +174,31 @@ def openUserManual():
 
     frame1.pack()
     
-#def openInstructions():
+def openInstructions():
+    instructions = tk.Toplevel(gui.master)
+    instructions.title("Instructions")
+    #w, h = gui.winfo_screenwidth(), userManual.winfo_screenheight()
+    #userManual.geometry("%dx%d+0+0" % (w, h)) #auto maximize window
+    frame3 = tk.Frame(instructions, relief="sunken")
+    
+    frame3.grid_rowconfigure(0, weight=1)
+    frame3.grid_columnconfigure(0, weight=1)
+    
+    yscrollbar = tk.Scrollbar(frame1, orient="vertical")
+    yscrollbar.grid(row=0, column=1, sticky="ns")
+    
+    instructionsTextbox = tk.Text(frame1, yscrollcommand=yscrollbar.set)
+    #manualTextbox.grid(row=0, column=0, padx=15, pady=15)
+    
+    with open("Instructions.txt", "r") as f:
+        instructionsTextbox.insert(tk.INSERT, f.read())
 
+    instructionsTextbox.config(font=("TkDefaultFont", 11))
+    
+    instructionsTextbox.grid(row=0, column=0, pady=15)
+    yscrollbar.config(command=manualTextbox.yview)
+
+    frame3.pack()
 
 def openAboutUs():
     aboutUs = tk.Toplevel(gui.master)
@@ -259,7 +282,7 @@ axillaTempLabel.grid(row=3, column=2)
 
 
 # === WIDGETS FOR TAB THREE
-buttonInstructions = tk.Button(tab3, text="Instructions", font=("TkDefaultFont", 16), width = 14, height = 1)
+buttonInstructions = tk.Button(tab3, text="Instructions", font=("TkDefaultFont", 16), width = 14, height = 1, command=openInstructions)
 buttonUsermanual = tk.Button(tab3, text="User Manual", font=("TkDefaultFont", 16), width = 14, height = 1, command=openUserManual)
 buttonAboutus = tk.Button(tab3, text="About Us", font=("TkDefaultFont", 16), width = 14, height = 1, command=openAboutUs)
 classNameLabel = tk.Label(tab3, text="California State University San Bernardino \n CSE 408 - Spring 2020", font=("TkDefaultFont", 14), width = 45, height = 2, bg="White")
